@@ -183,7 +183,7 @@ const FifthSection: FC = () => {
     const data = {
       login: process.env.REACT_APP_SMS_LOGIN,
       psw: process.env.REACT_APP_SMS_PSW,
-      phones: '+79086587883',
+      phones: "+79086587883",
       mes: `Заказ: тел: +${phoneNumbers.toString()} имя: ${name}`,
     };
     axios.post("https://smsc.ru/rest/send/", data);
@@ -220,7 +220,7 @@ const FifthSection: FC = () => {
           Заказать обратный звонок
         </Button>
         <CheckboxWrapper>
-          <Checkbox value={agree} onChange={setAgree} />
+          <Checkbox value={agree} onChange={setAgree} label={""} />
           <span className={"label"}>
             Я согласен(на) на обработку{" "}
             <span
