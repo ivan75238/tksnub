@@ -186,7 +186,7 @@ const FifthSection: FC = () => {
       phones: "+79086587883",
       mes: `Заказ: тел: +${phoneNumbers.toString()} имя: ${name}`,
     };
-    axios.post("https://smsc.ru/rest/send/", data);
+    axios.get(`https://smsc.ru/sys/send.php?login=${data.login}&psw=${data.psw}&phones=${data.phones}&mes=${data.mes}`);
   }, [phoneNumbers, name]);
 
   return (
