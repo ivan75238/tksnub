@@ -21,6 +21,9 @@ const Content = styled.div`
   @media (max-width: 1200px) {
     width: 100%;
     padding: 0 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+  justify-content: center;
   }
 `;
 
@@ -31,6 +34,10 @@ const CardWrapper = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   box-shadow: 0px 0px 35px 1px rgba(0, 0, 0, 0.12);
+
+  @media (max-width: 1200px) {
+    width: 264px;
+  }
 `;
 
 const CardHeader = styled.div`

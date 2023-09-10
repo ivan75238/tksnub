@@ -42,6 +42,10 @@ const CarsWrapper = styled.div`
   justify-content: center;
   gap: 32px;
   margin-top: 32px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 
 const CardWrapper = styled.div`
@@ -74,6 +78,19 @@ const CardWrapper = styled.div`
     font-weight: 400;
     color: rgb(26, 26, 26);
     text-align: center;
+  }
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    max-width: 415px;
+    width: 100%;
+
+    img {
+      max-width: 380px;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
   }
 `;
 

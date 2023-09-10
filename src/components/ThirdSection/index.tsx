@@ -23,6 +23,10 @@ const Content = styled.div`
     width: 100%;
     padding: 0 16px;
   }
+
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const ImgBlock = styled.div`
@@ -37,6 +41,12 @@ const ImgBlock = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (max-width: 800px) {
+    margin-top: 16px;
+    max-width: 400px;
+    width: 100%;
   }
 `;
 
@@ -60,6 +70,28 @@ const TextBlock = styled.div`
     font-size: 18px;
     font-weight: 400;
     color: rgb(26, 26, 26);
+  }
+
+  @media (max-width: 910px) {
+    text-align: start;
+
+    span {
+      text-align: start;
+    }
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+
+    h1 {
+      margin-bottom: 24px;
+    }
+
+    span {
+      text-align: center;
+    }
   }
 `;
 

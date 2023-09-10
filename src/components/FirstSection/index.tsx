@@ -13,6 +13,11 @@ const Wrapper = styled.div`
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-position: bottom;
   background-attachment: scroll, scroll, scroll, scroll;
+
+  @media (max-width: 1200px) {
+    padding-top: 100px;
+    padding-bottom: 0px;
+  }
 `;
 
 const Content = styled.div`
@@ -24,10 +29,6 @@ const Content = styled.div`
   @media (max-width: 1200px) {
     width: 100%;
     padding: 0 16px;
-  }
-
-  @media (max-width: 200px) {
-    flex-direction: column;
   }
 `;
 
@@ -63,15 +64,10 @@ const LeftBlock = styled.div`
   }
 
   @media (max-width: 1200px) {
-    p {
-      font-size: 16px;
-    }
     h1 {
-      font-size: 24px;
       width: auto;
     }
     span {
-      font-size: 16px;
       width: auto;
     }
   }
@@ -80,6 +76,16 @@ const LeftBlock = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+
+    p {
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+    }
+    span {
+      text-align: center;
+    }
   }
 `;
 
@@ -99,6 +105,7 @@ const ImgBlock = styled.div`
   @media (max-width: 1200px) {
     width: 300px;
     height: 275px;
+    border-radius: 200px;
   }
 
   @media (max-width: 850px) {
@@ -124,8 +131,8 @@ const Button = styled.div`
   }
 
   @media (max-width: 1200px) {
-    padding: 10px 16px;
-    font-size: 14px;
+    padding: 14px 20px;
+    font-size: 16px;
   }
 `;
 

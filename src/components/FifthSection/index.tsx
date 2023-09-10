@@ -15,6 +15,10 @@ const Wrapper = styled.div`
   padding-top: 125px;
   padding-bottom: 40px;
   background-color: rgb(47, 58, 73);
+
+  @media (max-width: 1200px) {
+    padding-top: 60px;
+  }
 `;
 
 const Content = styled.div`
@@ -28,7 +32,7 @@ const Content = styled.div`
 
   @media (max-width: 1200px) {
     width: 100%;
-    padding: 0 16px;
+    padding: 0 16px 32px 16px;
   }
 `;
 
@@ -37,6 +41,11 @@ const Title = styled.div`
   font-size: 40px;
   font-weight: 900;
   margin-bottom: 4px;
+
+  @media (max-width: 1200px) {
+    font-size: 24px;
+    text-align: center;
+  }
 `;
 
 const Message = styled.div`
@@ -44,6 +53,11 @@ const Message = styled.div`
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 24px;
+
+  @media (max-width: 1200px) {
+    font-size: 14px;
+    text-align: center;
+  }
 `;
 
 const Copyright = styled.div`
@@ -71,6 +85,11 @@ const CheckboxWrapper = styled.div`
     line-height: 16px;
     cursor: pointer;
   }
+
+  @media (max-width: 1200px) {
+    font-size: 14px;
+    margin-top: 24px;
+  }
 `;
 
 const Input = styled.input`
@@ -90,6 +109,11 @@ const Input = styled.input`
 
   &:focus {
     border-color: rgb(255, 13, 34);
+  }
+
+  @media (max-width: 1200px)  {
+    width: 100%;
+    max-width: 400px;
   }
 `;
 
@@ -111,6 +135,16 @@ const InputPhoneWrapper = styled.div`
 
     &:focus {
       border-color: rgb(255, 13, 34);
+    }
+  }
+
+  @media (max-width: 1200px)  {
+    width: 100%;
+    max-width: 400px;
+
+    input {
+      width: 100%;
+      max-width: 400px;
     }
   }
 `;
@@ -144,6 +178,7 @@ const Button = styled.div<{ disabled: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 8px;
   padding: 12px 24px;
   color: #fff;
@@ -156,6 +191,11 @@ const Button = styled.div<{ disabled: boolean }>`
 
   &:hover {
     box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 1200px)  {
+    width: 100%;
+    max-width: 400px;
   }
 `;
 

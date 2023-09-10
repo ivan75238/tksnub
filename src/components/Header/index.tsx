@@ -12,6 +12,10 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+
+  @media (max-width: 800px) {
+    padding: 16px;
+  }
 `;
 
 const Content = styled.div`
@@ -44,6 +48,11 @@ const Name = styled.div`
     font-size: 18px;
     line-height: 22px;
   }
+
+  @media (max-width: 800px) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 `;
 
 const OrgType = styled.div`
@@ -55,6 +64,11 @@ const OrgType = styled.div`
   @media (max-width: 1200px) {
     font-size: 14px;
     line-height: 18px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 12px;
+    line-height: 14px;
   }
 `;
 
@@ -123,6 +137,10 @@ const Button = styled.div`
       width: 30px;
       height: 30px;
     }
+  }
+
+  @media (max-width: 800px) {
+    display: none;
   }
 `;
 
