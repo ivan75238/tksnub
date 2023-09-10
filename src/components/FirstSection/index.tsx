@@ -20,6 +20,15 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  @media (max-width: 200px) {
+    flex-direction: column;
+  }
 `;
 
 const LeftBlock = styled.div`
@@ -52,6 +61,26 @@ const LeftBlock = styled.div`
     width: 600px;
     color: rgb(26, 26, 26);
   }
+
+  @media (max-width: 1200px) {
+    p {
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 24px;
+      width: auto;
+    }
+    span {
+      font-size: 16px;
+      width: auto;
+    }
+  }
+
+  @media (max-width: 850px) {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 const RightBlock = styled.div`
@@ -66,6 +95,15 @@ const ImgBlock = styled.div`
   background-size: cover;
   width: 500px;
   height: 450px;
+
+  @media (max-width: 1200px) {
+    width: 300px;
+    height: 275px;
+  }
+
+  @media (max-width: 850px) {
+    display: none;
+  }
 `;
 
 const Button = styled.div`
@@ -83,6 +121,11 @@ const Button = styled.div`
 
   &:hover {
     box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 1200px) {
+    padding: 10px 16px;
+    font-size: 14px;
   }
 `;
 

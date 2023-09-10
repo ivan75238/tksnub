@@ -25,6 +25,11 @@ const Content = styled.div`
   justify-content: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   padding-bottom: 32px;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    padding: 0 16px;
+  }
 `;
 
 const Title = styled.div`
@@ -177,16 +182,39 @@ const FifthSection: FC = () => {
   }, [agree, phoneNumbers, name]);
 
   /**
+   * Функция авторизации в сервисе SMSAERO
+   */
+  const smsAeroAuth = useCallback(() => {
+    const headers = {
+      auth: {
+        username: process.env.REACT_APP_SMS_AERO_LOGIN,
+        password: process.env.REACT_APP_SMS_AERO_PSW
+      }
+    }
+    return axios.post('https://email:api_key@gate.smsaero.ru/v2/auth', {}, headers);
+  }, []);
+
+  /**
    * Функция отправки запроса на обратный звонок
    */
   const sendRequest = useCallback(() => {
+    /*const data = {
+      login: process.env.REACT_APP_SMS_LOGIN,
+      psw: process.env.REACT_APP_SMS_PSW,
+      phones: "+79086587883",
+      mes: `Заказ: тел: +${phoneNumbers.toString()} имя: ${name}`,
+    };
+    axios.get(`https://smsc.ru/sys/send.php?login=${data.login}&psw=${data.psw}&phones=${data.phones}&mes=${data.mes}`);*/
     const data = {
       login: process.env.REACT_APP_SMS_LOGIN,
       psw: process.env.REACT_APP_SMS_PSW,
       phones: "+79086587883",
       mes: `Заказ: тел: +${phoneNumbers.toString()} имя: ${name}`,
     };
-    axios.get(`https://smsc.ru/sys/send.php?login=${data.login}&psw=${data.psw}&phones=${data.phones}&mes=${data.mes}`);
+    smsAeroAuth()
+    .then(() => {
+
+    })
   }, [phoneNumbers, name]);
 
   return (

@@ -18,6 +18,11 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    padding: 0 16px;
+  }
 `;
 
 const ImgBlock = styled.div`

@@ -19,6 +19,10 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 const NameWrapper = styled.div`
@@ -35,6 +39,11 @@ const Name = styled.div`
   span {
     font-weight: 800;
   }
+
+  @media (max-width: 1200px) {
+    font-size: 18px;
+    line-height: 22px;
+  }
 `;
 
 const OrgType = styled.div`
@@ -42,6 +51,11 @@ const OrgType = styled.div`
   font-weight: 300;
   color: #bcbcbc;
   line-height: 22px;
+
+  @media (max-width: 1200px) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 `;
 
 const RightBlock = styled.div`
@@ -56,6 +70,10 @@ const Phone = styled.div`
   span {
     font-weight: 800;
     margin-left: 4px;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 14px;
   }
 `;
 
@@ -95,6 +113,15 @@ const Button = styled.div`
 
     div {
       box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (max-width: 1200px) {
+    padding: 4px 8px;
+
+    div {
+      width: 30px;
+      height: 30px;
     }
   }
 `;
