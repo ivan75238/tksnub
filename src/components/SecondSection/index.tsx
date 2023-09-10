@@ -35,7 +35,7 @@ const CardHeader = styled.div`
   justify-content: center;
   height: 90px;
   border-radius: 10px 10px 0 0;
-  background-color: rgb(255, 125, 125);
+  background-color: #f28d63;
   font-weight: 600;
   font-size: 22px;
   color: #fff;
@@ -92,7 +92,7 @@ const PriceBlock = styled.div`
   color: rgba(26, 26, 26, 0.6);
 
   span {
-    color: rgb(255, 68, 84);
+    color: #eb6075;
     font-weight: 700;
     margin: 0 8px;
   }
@@ -107,7 +107,7 @@ const Button = styled.div`
   padding: 12px 24px;
   color: #fff;
   cursor: pointer;
-  background-color: rgb(255, 13, 34);
+  background-color: #eb6075;
   font-size: 18px;
   font-weight: 500;
   margin-top: 16px;

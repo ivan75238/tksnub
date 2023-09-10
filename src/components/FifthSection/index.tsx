@@ -144,7 +144,7 @@ const Button = styled.div<{ disabled: boolean }>`
   color: #fff;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   background-color: ${({ disabled }) =>
-    disabled ? "rgb(151, 151, 156)" : "rgb(255, 13, 34)"};
+    disabled ? "rgb(151, 151, 156)" : "#eb6075"};
   font-size: 18px;
   font-weight: 500;
   width: 400px;

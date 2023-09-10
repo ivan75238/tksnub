@@ -29,8 +29,8 @@ const NameWrapper = styled.div`
 `;
 
 const Name = styled.div`
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 28px;
+  line-height: 32px;
 
   span {
     font-weight: 800;
@@ -38,10 +38,10 @@ const Name = styled.div`
 `;
 
 const OrgType = styled.div`
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 300;
   color: #bcbcbc;
-  line-height: 18px;
+  line-height: 22px;
 `;
 
 const RightBlock = styled.div`
@@ -78,7 +78,7 @@ const Button = styled.div`
     width: 35px;
     height: 35px;
     border-radius: 10px;
-    background-color: rgb(255, 13, 34);
+    background-color: #eb6075;
   }
 
   svg {

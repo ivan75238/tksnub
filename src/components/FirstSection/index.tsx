@@ -61,8 +61,9 @@ const RightBlock = styled.div`
 `;
 
 const ImgBlock = styled.div`
-  background-image: url("./FirstSectionImg.png");
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-image: url("./FirstSectionImg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 500px;
   height: 450px;
 `;
@@ -76,7 +77,7 @@ const Button = styled.div`
   padding: 20px 32px;
   color: #fff;
   cursor: pointer;
-  background-color: rgb(255, 13, 34);
+  background-color: #eb6075;
   font-size: 18px;
   font-weight: 500;
 

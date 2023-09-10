@@ -81,7 +81,7 @@ const Button = styled.div`
   padding: 12px 24px;
   color: #fff;
   cursor: pointer;
-  background-color: rgb(255, 13, 34);
+  background-color: #eb6075;
   font-size: 18px;
   font-weight: 500;
   margin-top: 16px;
