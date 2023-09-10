@@ -224,39 +224,14 @@ const FifthSection: FC = () => {
   }, [agree, phoneNumbers, name]);
 
   /**
-   * Функция авторизации в сервисе SMSAERO
-   */
-  const smsAeroAuth = useCallback(() => {
-    const headers = {
-      auth: {
-        username: process.env.REACT_APP_SMS_AERO_LOGIN,
-        password: process.env.REACT_APP_SMS_AERO_PSW
-      }
-    }
-    return axios.post('https://gate.smsaero.ru/v2/auth', {}, headers);
-  }, []);
-
-  /**
    * Функция отправки запроса на обратный звонок
    */
   const sendRequest = useCallback(() => {
-    /*const data = {
-      login: process.env.REACT_APP_SMS_LOGIN,
-      psw: process.env.REACT_APP_SMS_PSW,
-      phones: "+79086587883",
-      mes: `Заказ: тел: +${phoneNumbers.toString()} имя: ${name}`,
-    };
-    axios.get(`https://smsc.ru/sys/send.php?login=${data.login}&psw=${data.psw}&phones=${data.phones}&mes=${data.mes}`);*/
     const data = {
-      login: process.env.REACT_APP_SMS_LOGIN,
-      psw: process.env.REACT_APP_SMS_PSW,
       phones: "+79086587883",
       mes: `Заказ: тел: +${phoneNumbers.toString()} имя: ${name}`,
     };
-    smsAeroAuth()
-    .then(() => {
-
-    })
+    axios.get(`/api.php?phones=${data.phones}&mes=${data.mes}`);
   }, [phoneNumbers, name]);
 
   return (
