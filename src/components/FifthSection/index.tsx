@@ -227,11 +227,8 @@ const FifthSection: FC = () => {
    * Функция отправки запроса на обратный звонок
    */
   const sendRequest = useCallback(() => {
-    const data = {
-      phones: "+79086587883",
-      mes: `Заказ: тел: +${phoneNumbers.toString()} имя: ${name}`,
-    };
-    axios.get(`/api.php?phones=${data.phones}&mes=${data.mes}`);
+    const mes = `Заказ: тел: +${phoneNumbers.toString()} имя: ${name}`;
+    axios.get(`/api.php?mes=${mes}`);
   }, [phoneNumbers, name]);
 
   return (
