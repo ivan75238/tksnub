@@ -6,6 +6,8 @@ import PersonalDataModal from "../PersonalDataModal";
 import InputMask from "react-input-mask";
 import axios from "axios";
 
+axios.defaults.withCredentials = true;
+
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
