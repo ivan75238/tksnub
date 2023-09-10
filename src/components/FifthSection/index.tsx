@@ -239,6 +239,15 @@ const FifthSection: FC = () => {
     });
   }, [phoneNumbers, name]);
 
+  /**
+   * Изменение имени
+   */
+  const onChangeName = useCallback((val) => {
+    if (val < 15) {
+      setName(val);
+    }
+  }, []);
+
   return (
     <Wrapper id="order-form">
       <Content>
@@ -246,7 +255,7 @@ const FifthSection: FC = () => {
         <Message>Закажите обратный звонок и мы решим ваш вопрос!</Message>
         <Input
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => onChangeName(e.target.value)}
           placeholder="Имя*"
         />
         <InputPhoneWrapper>
