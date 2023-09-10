@@ -23,6 +23,10 @@ const Modal = styled.div`
   border-radius: 10px;
   padding: 16px;
   position: relative;
+
+  @media (max-width: 399px)  {
+    width: 100%;
+  }
 `;
 
 const IconWrapper = styled.div`

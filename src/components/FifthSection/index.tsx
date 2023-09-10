@@ -5,6 +5,7 @@ import Checkbox from "../Checkbox";
 import PersonalDataModal from "../PersonalDataModal";
 import InputMask from "react-input-mask";
 import axios from "axios";
+import ThnxPopup from "../ThnxPopup";
 
 axios.defaults.withCredentials = true;
 
@@ -207,6 +208,8 @@ const FifthSection: FC = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [description, setDescription] = useState("");
+  const [disabledButton, setDisabledButton] = useState(false);
+  const [openThnxPopup, setOpenThnxPopup] = useState(false);
 
   /**
    * Получение номера телефона, без всяких символов
@@ -220,15 +223,20 @@ const FifthSection: FC = () => {
    * Определение блокировки кнопки запроса
    */
   const disabled = useMemo(() => {
-    return !agree || phoneNumbers.toString().length !== 11 || !name.trim();
-  }, [agree, phoneNumbers, name]);
+    return disabledButton || !agree || phoneNumbers.toString().length !== 11 || !name.trim();
+  }, [agree, phoneNumbers, name, disabledButton]);
 
   /**
    * Функция отправки запроса на обратный звонок
    */
   const sendRequest = useCallback(() => {
-    const mes = `Заказ: тел: +${phoneNumbers.toString()} имя: ${name}`;
-    axios.get(`/api.php?mes=${mes}`);
+    setDisabledButton(true);
+    const mes = `Новый заказ! Имя: ${name} Тел: +${phoneNumbers.toString()}`;
+    setTimeout(() => setDisabledButton(false), 5000);
+    axios.get(`/api.php?mes=${mes}`)
+    .then(() => {
+      setOpenThnxPopup(true);
+    });
   }, [phoneNumbers, name]);
 
   return (
@@ -277,6 +285,9 @@ const FifthSection: FC = () => {
       <Copyright>Copyright © 2022 - {dayjs().format("YYYY")} ТКСнаб</Copyright>
       {openPersonalDataModal && (
         <PersonalDataModal hideModal={() => setOpenPersonalDataModal(false)} />
+      )}
+      {openThnxPopup && (
+        <ThnxPopup hideModal={() => setOpenThnxPopup(false)} />
       )}
     </Wrapper>
   );
