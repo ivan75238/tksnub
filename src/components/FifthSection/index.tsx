@@ -233,7 +233,7 @@ const FifthSection: FC = () => {
         password: process.env.REACT_APP_SMS_AERO_PSW
       }
     }
-    return axios.post('https://email:api_key@gate.smsaero.ru/v2/auth', {}, headers);
+    return axios.post('https://gate.smsaero.ru/v2/auth', {}, headers);
   }, []);
 
   /**
