@@ -243,7 +243,7 @@ const FifthSection: FC = () => {
    * Изменение имени
    */
   const onChangeName = useCallback((val) => {
-    if (val < 15) {
+    if (val.length < 15) {
       setName(val);
     }
   }, []);
