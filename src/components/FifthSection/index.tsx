@@ -207,7 +207,6 @@ const FifthSection: FC = () => {
   const [agree, setAgree] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [description, setDescription] = useState("");
   const [disabledButton, setDisabledButton] = useState(false);
   const [openThnxPopup, setOpenThnxPopup] = useState(false);
 
@@ -231,7 +230,8 @@ const FifthSection: FC = () => {
    */
   const sendRequest = useCallback(() => {
     setDisabledButton(true);
-    const mes = `Новый заказ! Имя: ${name} Тел: +${phoneNumbers.toString()}`;
+    const phoneString = "8" + phoneNumbers.toString().substring(1)
+    const mes = `Новый заказ! Имя: ${name} Тел: ${phoneString}`;
     setTimeout(() => setDisabledButton(false), 5000);
     axios.get(`/api.php?mes=${mes}`)
     .then(() => {

@@ -25,7 +25,7 @@ const Modal = styled.div`
   position: relative;
 
   @media (max-width: 399px)  {
-    width: 100%;
+    width: 95%;
   }
 `;
 
@@ -55,6 +55,10 @@ const Title = styled.div`
   color: rgb(26, 26, 26);
   font-size: 20px;
   font-weight: 600;
+
+  @media (max-width: 399px)  {
+    text-align: center;
+  }
 `;
 
 const Information = styled.div`
