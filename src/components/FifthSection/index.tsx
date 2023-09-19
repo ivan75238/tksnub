@@ -114,7 +114,7 @@ const Input = styled.input`
     border-color: rgb(255, 13, 34);
   }
 
-  @media (max-width: 1200px)  {
+  @media (max-width: 1200px) {
     width: 100%;
     max-width: 400px;
   }
@@ -141,7 +141,7 @@ const InputPhoneWrapper = styled.div`
     }
   }
 
-  @media (max-width: 1200px)  {
+  @media (max-width: 1200px) {
     width: 100%;
     max-width: 400px;
 
@@ -196,7 +196,7 @@ const Button = styled.div<{ disabled: boolean }>`
     box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.1);
   }
 
-  @media (max-width: 1200px)  {
+  @media (max-width: 1200px) {
     width: 100%;
     max-width: 400px;
   }
@@ -222,30 +222,49 @@ const FifthSection: FC = () => {
    * Определение блокировки кнопки запроса
    */
   const disabled = useMemo(() => {
-    return disabledButton || !agree || phoneNumbers.toString().length !== 11 || !name.trim();
+    return (
+      disabledButton ||
+      !agree ||
+      phoneNumbers.toString().length !== 11 ||
+      !name.trim()
+    );
   }, [agree, phoneNumbers, name, disabledButton]);
+
+  /**
+   * Блокировка скрола
+   */
+  const blockScrollBody = useCallback(() => {
+    document.body.style.overflow = "hidden";
+  }, []);
+
+  /**
+   * Разблокировка скрола
+   */
+  const unblockScrollBody = useCallback(() => {
+    document.body.style.overflow = "auto";
+  }, []);
 
   /**
    * Функция отправки запроса на обратный звонок
    */
   const sendRequest = useCallback(() => {
     setDisabledButton(true);
-    const phoneString = "8" + phoneNumbers.toString().substring(1)
+    const phoneString = "8" + phoneNumbers.toString().substring(1);
     const mes = `ТКСнаб заказ Имя: ${name} Тел: ${phoneString}`;
     setTimeout(() => setDisabledButton(false), 5000);
-    axios.get(`/api.php?mes=${mes}`)
-    .then(() => {
+    axios.get(`/api.php?mes=${mes}`).then(() => {
+      blockScrollBody();
       setOpenThnxPopup(true);
       setName("");
       setPhone("");
     });
-  }, [phoneNumbers, name]);
+  }, [phoneNumbers, name, blockScrollBody]);
 
   /**
    * Изменение имени
    */
   const onChangeName = useCallback((val) => {
-    if (val.length < 15) {
+    if (val.length < 16) {
       setName(val);
     }
   }, []);
@@ -286,7 +305,10 @@ const FifthSection: FC = () => {
             Я согласен(на) на обработку{" "}
             <span
               className={"link"}
-              onClick={() => setOpenPersonalDataModal(true)}
+              onClick={() => {
+                blockScrollBody();
+                setOpenPersonalDataModal(true);
+              }}
             >
               персональных данных
             </span>
@@ -295,10 +317,20 @@ const FifthSection: FC = () => {
       </Content>
       <Copyright>Copyright © 2022 - {dayjs().format("YYYY")} ТКСнаб</Copyright>
       {openPersonalDataModal && (
-        <PersonalDataModal hideModal={() => setOpenPersonalDataModal(false)} />
+        <PersonalDataModal
+          hideModal={() => {
+            unblockScrollBody();
+            setOpenPersonalDataModal(false);
+          }}
+        />
       )}
       {openThnxPopup && (
-        <ThnxPopup hideModal={() => setOpenThnxPopup(false)} />
+        <ThnxPopup
+          hideModal={() => {
+            unblockScrollBody();
+            setOpenThnxPopup(false);
+          }}
+        />
       )}
     </Wrapper>
   );

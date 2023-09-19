@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   padding-bottom: 100px;
   background-color: rgb(230, 230, 239);
 
-  @media (max-width: 1366px) {
+  @media (max-width: 1520px) {
     padding-top: 30px;
   }
 
