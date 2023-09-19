@@ -43,7 +43,7 @@ const CarsWrapper = styled.div`
   gap: 32px;
   margin-top: 32px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 900px) {
     flex-direction: column;
   }
 `;

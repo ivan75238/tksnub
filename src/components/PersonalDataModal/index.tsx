@@ -77,7 +77,7 @@ interface Props {
 
 const PersonalDataModal: FC<Props> = ({hideModal}) => {
   return (
-    <ModalWrapper>
+    <ModalWrapper onClick={hideModal}>
       <Modal>
         <IconWrapper onClick={hideModal}>
           <svg

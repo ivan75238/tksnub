@@ -231,11 +231,13 @@ const FifthSection: FC = () => {
   const sendRequest = useCallback(() => {
     setDisabledButton(true);
     const phoneString = "8" + phoneNumbers.toString().substring(1)
-    const mes = `Новый заказ! Имя: ${name} Тел: ${phoneString}`;
+    const mes = `ТКСнаб заказ Имя: ${name} Тел: ${phoneString}`;
     setTimeout(() => setDisabledButton(false), 5000);
     axios.get(`/api.php?mes=${mes}`)
     .then(() => {
       setOpenThnxPopup(true);
+      setName("");
+      setPhone("");
     });
   }, [phoneNumbers, name]);
 
