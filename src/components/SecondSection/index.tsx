@@ -53,6 +53,7 @@ const CardHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: 90px;
   border-radius: 10px 10px 0 0;
   background-color: #f28d63;
@@ -76,7 +77,7 @@ const LisWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 210px;
+  height: 180px;
 `;
 
 const ListItem = styled.div`
@@ -106,10 +107,12 @@ const ListItem = styled.div`
 const PriceBlock = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 20px;
   color: rgba(26, 26, 26, 0.6);
+  height: 54px;
 
   span {
     color: #eb6075;
@@ -140,42 +143,32 @@ const Button = styled.div`
 const SecondSection: FC = () => {
   const cards = [
     {
-      title: "Квартирный переезд",
+      title: "Доставка из Красноярска",
       list: [
-        "Подадим транспорт с грузчиками или без",
-        "Бесплатно спустим и поднимем на этаж",
-        "Бережно упакуем ваши вещи и вашу мебель",
+        "Продукты питания",
+        "Мебель",
+        "Автозапчасти",
+        "Стройматериалы",
       ],
-      price: 1700,
     },
     {
-      title: "Офисный переезд",
+      title: "Помощь с доставкой по России",
       list: [
-        "Бесплатно оценим ваш переезд",
-        "Зафиксируем цену вашего переезда",
-        "Произведем расстановку и организацию рабочих мест",
+        "Доставим груз до ТК г. Красноярск и оформим отправление в другой город России",
+        "Заберем ваш груз из ТК г. Красноярск и доставим вам"
       ],
-      price: "2 200",
     },
     {
-      title: "Дачный переезд",
+      title: "Попутный груз",
       list: [
-        "Подадим транспорт с грузчиками или без",
-        "5 посадочных мест в салоне автомобиля",
-        "В любую точку Московской области",
+        "Осуществляем доставку попутного груза, догруза с рп. Магистральный до г. Краснояск и попутные города и населенные пункты (цена на попутный груз ниже)",
       ],
-      price: "3 000",
     },
     {
-      title: "Доп. услуги",
+      title: "От скалада до Вас",
       list: [
-        "Грузчики",
-        "Грузовое такси",
-        "Упаковка мебели и вещей",
-        "Перевозка мебели",
-        "Перевозка бытовой техники",
+        "Закажем машину с грузчиками и доставим груз в удобное для Вас время",
       ],
-      price: "1 500",
     },
   ];
 
@@ -209,7 +202,15 @@ const SecondSection: FC = () => {
                   })}
                 </LisWrapper>
                 <PriceBlock>
-                  от <span>{item.price}</span> руб
+                  {
+                    i === 0 ?
+                      <>
+                        <span>16 руб/кг</span>
+                        <span>4000 куб</span>
+                      </>
+                    :
+                      <span/>
+                  }
                 </PriceBlock>
                 <Button onClick={scrollToOrderForm}>Заказать</Button>
               </CardBody>

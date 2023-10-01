@@ -63,6 +63,7 @@ const CardWrapper = styled.div`
     width: 380px;
     height: 250px;
     object-fit: cover;
+    border-radius: 8px;
   }
 
   p {
@@ -116,22 +117,22 @@ const Button = styled.div`
 const FourthSection: FC = () => {
   const cars = [
     {
-      img: "./2t.jpg",
-      title: "Компактный",
-      description: "Лучший вариант для перевозок грузов по городу",
+      img: "./sklad.jpg",
+      title: "Хранение груза",
+      description: "Складские помещения для вашего груза в г. Красноярск и рп. Магистральный. Примем на склад и бережно сохраним вашим груз до дня погрузки в транспорт или Вашего приезда",
     },
     {
-      img: "./10t1.png",
-      title: "Крупногабаритный",
+      img: "./srtah.jpg",
+      title: "Страхование груза",
       description:
-        "Идеально подходит для транспортировки большого объема грузов",
+        "Страхуем груз по вашему желанию от повреждений и утраты. Страхование осуществляется при предъявлении документов на груз. 0.1% от стоимости товара",
     },
   ];
 
   return (
     <Wrapper>
       <Content>
-        <Title>Автопарк</Title>
+        <Title>Дополнительные услуги</Title>
         <CarsWrapper>
           {cars.map((car, i) => {
             return (
@@ -139,7 +140,7 @@ const FourthSection: FC = () => {
                 <img src={car.img} />
                 <p>{car.title}</p>
                 <span>{car.description}</span>
-                <Button onClick={scrollToOrderForm}>Заказать машину</Button>
+                <Button onClick={scrollToOrderForm}>Заказать звонок</Button>
               </CardWrapper>
             );
           })}

@@ -49,7 +49,7 @@ const LeftBlock = styled.div`
   h1 {
     font-size: 40px;
     font-weight: 900;
-    width: 400px;
+    width: 450px;
     margin-top: 0;
     margin-bottom: 16px;
     color: rgb(26, 26, 26);
@@ -141,8 +141,7 @@ const FirstSection: FC = () => {
     <Wrapper>
       <Content>
         <LeftBlock>
-          <p>Грузоперевозки в черте города и за ее пределами</p>
-          <h1>Нужна машина для перевозки вещей?</h1>
+          <h1>Добро пожаловать в нашу транспортную компанию</h1>
           <span>
             Закажите обратный звонок и мы выполним вашу заявку быстро и
             качественно
