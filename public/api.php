@@ -7,7 +7,7 @@
     curl_close($curl);
   }
   if( $curl = curl_init() ) {
-    curl_setopt($curl, CURLOPT_URL, 'https://smsc.ru/sys/send.php?login=a.machnov@mail.ru&psw=6depnSs4L!G8FEC&phones=79950785910&mes='.$_GET['mes'].' Баланс: '.$balance);
+    curl_setopt($curl, CURLOPT_URL, 'https://smsc.ru/sys/send.php?login=a.machnov@mail.ru&psw=6depnSs4L!G8FEC&phones=79836935353&mes='.$_GET['mes'].' Баланс: '.$balance);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
     $out = curl_exec($curl);
     //$info = curl_getinfo($curl);
