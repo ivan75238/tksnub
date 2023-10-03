@@ -205,8 +205,8 @@ const SecondSection: FC = () => {
                   {
                     i === 0 ?
                       <>
-                        <span>16 руб/кг</span>
-                        <span>4000 куб</span>
+                        <span>17 руб/кг</span>
+                        <span>4200 куб</span>
                       </>
                     :
                       <span/>
