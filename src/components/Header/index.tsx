@@ -156,7 +156,7 @@ const Header: FC = () => {
         </NameWrapper>
         <RightBlock>
           <Phone>
-            +7 (983)<span>693-53-53</span>
+            +7 (995)<span>078-59-10</span>
           </Phone>
           <Button onClick={scrollToOrderForm}>
             <div>
