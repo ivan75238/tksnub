@@ -1,5 +1,6 @@
 <?php
   $balance = '';
+  var_dump($balance);
   if( $curl = curl_init() ) {
     curl_setopt($curl, CURLOPT_URL, 'https://smsc.ru/sys/balance.php?login=a.machnov@mail.ru&psw=6depnSs4L!G8FEC');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
