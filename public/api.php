@@ -16,12 +16,12 @@
     curl_close($curl);
   }
   if( $ch = curl_init() ) {
-    $array = array(
+    $array = json_encode(array(
       'login'    => 'a.machnov@mail.ru',
       'psw' => '6depnSs4L!G8FEC',
       'phones' => '79950785910',
       'mes' => $_GET['mes'].' Баланс: '.$balance
-    );
+    ));
     curl_setopt($ch, CURLOPT_URL,"https://smsc.ru/rest/send/");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $array);
