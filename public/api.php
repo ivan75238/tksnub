@@ -15,7 +15,7 @@
     echo $out;
     curl_close($curl);
   }
-  if( $curl = curl_init() ) {
+  if( $ch = curl_init() ) {
     curl_setopt($ch, CURLOPT_URL,"https://smsc.ru/rest/send/");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS,
