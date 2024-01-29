@@ -16,10 +16,15 @@
     curl_close($curl);
   }
   if( $ch = curl_init() ) {
+    $array = array(
+      'login'    => 'a.machnov@mail.ru',
+      'psw' => '6depnSs4L!G8FEC',
+      'phones' => '79950785910',
+      'mes' => $_GET['mes'].' Баланс: '.$balance
+    );
     curl_setopt($ch, CURLOPT_URL,"https://smsc.ru/rest/send/");
     curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS,
-            'login=a.machnov@mail.ru&psw=6depnSs4L!G8FEC&phones=79950785910&mes='.$_GET['mes'].' Баланс: '.$balance);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $array);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $server_output = curl_exec($ch);
     var_dump($server_output);
