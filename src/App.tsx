@@ -3,8 +3,9 @@ import Header from "./components/Header";
 import FirstSection from "./components/FirstSection";
 import SecondSection from "./components/SecondSection";
 import ThirdSection from "./components/ThirdSection";
-import FourthSection from "./components/FourthSection";
 import FifthSection from "./components/FifthSection";
+import FourthSection from "./components/FourthSection";
+import SixthSection from "./components/SixthSection";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -21,6 +22,7 @@ const App = () => {
         <ThirdSection/>
         <FourthSection/>
         <FifthSection/>
+        <SixthSection/>
     </Wrapper>
   );
 }

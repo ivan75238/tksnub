@@ -36,7 +36,7 @@ const Content = styled.div`
 `;
 
 const CardWrapper = styled.div`
-  width: 22%;
+  width: 19%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -58,7 +58,7 @@ const CardHeader = styled.div`
   border-radius: 10px 10px 0 0;
   background-color: #f28d63;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 21px;
   color: #fff;
 `;
 
@@ -143,13 +143,26 @@ const Button = styled.div`
 const SecondSection: FC = () => {
   const cards = [
     {
-      title: "Доставка из Красноярска",
+      title: "От г. Красноярска<br/>до п. Магистральный",
       list: [
         "Продукты питания",
         "Мебель",
         "Автозапчасти",
         "Стройматериалы",
       ],
+      price1: '20 руб/кг',
+      price2: '4800 куб'
+    },
+    {
+      title: "От г. Красноярска<br/>до п. Улькан",
+      list: [
+        "Продукты питания",
+        "Мебель",
+        "Автозапчасти",
+        "Стройматериалы",
+      ],
+      price1: '21 руб/кг',
+      price2: '4900 куб'
     },
     {
       title: "Помощь с доставкой по России",
@@ -178,7 +191,7 @@ const SecondSection: FC = () => {
         {cards.map((item, i) => {
           return (
             <CardWrapper key={i}>
-              <CardHeader>{item.title}</CardHeader>
+              <CardHeader dangerouslySetInnerHTML={{ __html: item.title }} />
               <CardBody>
                 <LisWrapper>
                   {item.list.map((el, j) => {
@@ -203,10 +216,10 @@ const SecondSection: FC = () => {
                 </LisWrapper>
                 <PriceBlock>
                   {
-                    i === 0 ?
+                    !!item.price1 ?
                       <>
-                        <span>19 руб/кг</span>
-                        <span>4700 куб</span>
+                        <span>{item.price1}</span>
+                        <span>{item.price2}</span>
                       </>
                     :
                       <span/>
